@@ -40,8 +40,7 @@ when utilizing LAG (bond) interfaces when testing connectivity between multiple 
 ### Test Logs
 
 When running these benchmarks, all output from the `iperf -s` (iperf server) and all of the output from the
-clients executing the script will be collected and stored at the `benchmark_results` directory relative to where
-the playbook directory.
+clients executing the script will be collected and stored at the `benchmark_results` directory relative to the playbook directory.
 
 The current timestamps of when the filed were `retrieved` from the host are what are appended to the filename
 and do not reflect the run-time of the tests themselves. Though it is assumed that you will be executing these 
