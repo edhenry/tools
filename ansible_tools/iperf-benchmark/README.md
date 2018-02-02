@@ -22,7 +22,7 @@ This is dependent on which nodes you assigned to which `[host groups]` defined i
 ### Host definition
 
 Within the `hosts` file in this directory there are two groups defined, `iperf_servers` and `iperf_clients`, the 
-nameing of these groups is meant to stay in line with the typical iperf nomenclature.
+naming of these groups is meant to stay in line with the typical iperf nomenclature.
 
 Define which hosts you would like to run iperf in server mode `-s`, along with which hosts you would like to run client
 connectivity tests.
