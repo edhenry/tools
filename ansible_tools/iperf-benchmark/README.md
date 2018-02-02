@@ -37,4 +37,13 @@ The variable `test_count` will control how many concurrent sessions you would li
 when utilizing LAG (bond) interfaces when testing connectivity between multiple hosts within a network.
 
 
+### Test Logs
 
+When running these benchmarks, all output from the `iperf -s` (iperf server) and all of the output from the
+clients executing the script will be collected and stored at the `benchmark_results` directory relative to where
+the playbook directory.
+
+The current timestamps of when the filed were `retrieved` from the host are what are appended to the filename
+and do not reflect the run-time of the tests themselves. Though it is assumed that you will be executing these 
+tests independent of eachother, utilizing this playbook, so the timestamps are useful for indexing when the tests
+occured relative to one another.
