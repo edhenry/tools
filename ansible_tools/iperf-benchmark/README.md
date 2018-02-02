@@ -33,7 +33,7 @@ connectivity tests.
 
 There is currently only a single variable for definition within this role. This variable is located in the `var/` subdirectory.
 
-The variable `test_count` will control how many concurrent tests you would like to run between nodes. This variable will help
+The variable `test_count` will control how many concurrent sessions you would like to run between nodes. This variable will help
 when utilizing LAG (bond) interfaces when testing connectivity between multiple hosts within a network.
 
 
