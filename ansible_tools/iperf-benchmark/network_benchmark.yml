@@ -1,6 +1,6 @@
 ---
 
-- hosts: iperf_servers, iperf_clients
+- hosts: ssh_ips
   remote_user: vagrant
   become: true
   gather_facts: yes
