@@ -21,6 +21,11 @@ This is dependent on which nodes you assigned to which `[host groups]` defined i
 
 ### Host definition
 
+The play currently supports the ability to use a "jump host" (bastion host) in order to execute these tests
+against a deployment. The `ssh_ips` group that is defined within the hosts file is where this can be defined.
+If no jump host is required, feel free to let the management of the jobs run in-line with the tests themselves.
+Though it is advised to utilize a management network of sorts as to not impact the execution of the playbook.
+
 Within the `hosts` file in this directory there are two groups defined, `iperf_servers` and `iperf_clients`, the 
 naming of these groups is meant to stay in line with the typical iperf nomenclature.
 
@@ -36,6 +41,8 @@ There is currently only a single variable for definition within this role. This 
 The variable `test_count` will control how many concurrent sessions you would like to run between nodes. This variable will help
 when utilizing LAG (bond) interfaces when testing connectivity between multiple hosts within a network.
 
+Each one of the tests will end up utilizing a different destination port, which can be useful depending on
+the hashing algorithm that is in use on a given LAG (bond) on the hosts one is testing.
 
 ### Test Logs
 
