@@ -1,7 +1,7 @@
 ---
 
 - name: Install iperf
-  yum:
+  apt:
     name: iperf
     state: present
 
