@@ -1,0 +1,114 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "dashboard_name",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "telegraf system dashboard",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.NoIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.YesIntent",
+        "samples": []
+      },
+      {
+        "name": "GetDashboards",
+        "samples": [
+          "get dashboards",
+          "please get me the dashboards",
+          "can you get me the list of dashboards",
+          "what dashboards are available",
+          "dashboards please"
+        ],
+        "slots": []
+      },
+      {
+        "name": "NoIntent",
+        "samples": [
+          "no",
+          "go away",
+          "no thanks",
+          "no thank you",
+          "not right now"
+        ],
+        "slots": []
+      },
+      {
+        "name": "OpenDashboard",
+        "samples": [
+          "open the dashboard",
+          "open dashboard please",
+          "open",
+          "open please"
+        ],
+        "slots": [
+          {
+            "name": "dashboard",
+            "type": "dashboard_name",
+            "samples": [
+              "{dashboard}",
+              "please open the {dashboard} dashboard",
+              "open {dashboard}"
+            ]
+          }
+        ]
+      }
+    ],
+    "invocationName": "infrastructure"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-OpenDashboard.IntentSlot-dashboard",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What dashboard would you like me to open?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "OpenDashboard",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "dashboard",
+            "type": "dashboard_name",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-OpenDashboard.IntentSlot-dashboard"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
